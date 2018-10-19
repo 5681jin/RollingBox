@@ -54,7 +54,7 @@ public class boxmove : MonoBehaviour
         if (KeyInputCheck == 1 && BoxRotation==1)
         {
             KeyInputCheck = 0;
-            //rb.freezeRotation = true;
+            rb.freezeRotation = true;
             InvokeRepeating("BoxMove", 0, 0.001f);
         }
 
@@ -63,12 +63,11 @@ public class boxmove : MonoBehaviour
     void BoxMove()
     {
         transform.position += new Vector3(RightLeftDistinction * MoveSpeed , 0, 0);//이동
-        //transform.position += new Vector3(-RightLeftDistinction *0.00001f *BoxRotation*(-30*BoxRotation+1)*1.059378145028868f, 0, 0);
         this.transform.Rotate(new Vector3(0, 0, RightLeftDistinction * -RotateAngle));//회전
         BoxRotation++;
         if(BoxRotation>50)
         {
-            //rb.freezeRotation = false;
+            rb.freezeRotation = false;
             CancelInvoke();
             BoxRotation = 1;
         }
