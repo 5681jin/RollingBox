@@ -54,7 +54,7 @@ public class boxmove : MonoBehaviour
         if (KeyInputCheck == 1 && BoxRotation==1)
         {
             KeyInputCheck = 0;
-            rb.freezeRotation = true;
+            //rb.freezeRotation = true;
             InvokeRepeating("BoxMove", 0, 0.001f);
         }
 
@@ -68,7 +68,7 @@ public class boxmove : MonoBehaviour
         BoxRotation++;
         if(BoxRotation>50)
         {
-            rb.freezeRotation = false;
+            //rb.freezeRotation = false;
             CancelInvoke();
             BoxRotation = 1;
         }
